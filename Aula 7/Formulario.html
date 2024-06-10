@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <h1>Formulário do exemplo</h1>
+        <label for="nome">Nome</label><!--Coloca o nome que vai ser criado, para que o usuário possa digitar-->
+        <input type="text" id="idNome" placeholder="Digite o nome aqui" name="cpNome" size="21"
+            required><!--Cria o campo para o usúario poder digitar-->
+        <br><br>
+        <label for="cpIdade">Idade</label>
+        <input type="number" id="idIdade" name="cpIdade" maxlength="3" size="21px" min="0" max="120" required>
+        <br><br>
+        <label for="cpData">Data de nacimento</label>
+        <input type="date" id="idData" name="cpData" min="2024-06-11" max="2024-11-06">
+        <br><br>
+        <label for="cpEmail">E-mail</label>
+        <input type="email" id="idEmail" placeholder="Digite o seu email" name="cpEmail" required>
+        <br><br>
+        
+        <fieldset><!--Cria um retangulo no código-->
+            <legend>Exemplo de lista</legend>
+            <label for="paises">Escolha um pais</label>
+            <input type="text" id="idPaises" name="cpPaises" list="listapaises" required><!--Criando um input para que chama a lista abaixo atraves do atributo list-->
+            <datalist id="listapaises"><!-- Criação de uma lista que sera utilisada no input acima-->
+                <option value="Br">Brasil</option>
+                <option value="Fr">França</option>
+                <option value="CAN">Canadá</option>
+                <option value="USA">Estados Unidos</option>
+            </datalist>
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar"><!--Criação do botão de enviar-->
+        <input type="reset" value="Limpar"><!-- Criação do botão limpar-->
+    </form>
+</body>
+</body>
+
+</html>
