@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de justificativa</title>
+</head>
+<body>
+    <main>
+        <h1>Justifique seua Entrada na Lista de Espera</h1>
+        <form>
+            <h2>Dados pessoais</h2>
+            <label for="genero">Genero:</label>
+            <input type="radio" name="genero" value="Masculino" required>Masculino
+            <input type="radio" name="genero" value="Feminino">Feminino
+            <input type="radio" name="genero" value="Outros">Outros
+            <br>
+            <br>
+
+            <h2>Necessidades</h2>
+            <legend> Qual o grau de sua necessidade ?</legend>
+            <input type="radio" name="necessidade" value="Muito">Necessito Muito<br>
+            <input type="radio" name="necessidade" value="Feminino">Necessito Pouco<br>
+            <input type="radio" name="necessidade" value="Masculono">Necessito<br>
+            <br>
+
+            <h2>Justifique a sua Necessidade</h2>
+            <legend>Coloque a sua justificativa abaixo:</legend>
+            <textarea id="idJustificativa" name="cpJustificativa" placeholder="Digite a sua justificativa aqui:"></textarea>
+
+            <h2>Escolaridade</h2>
+            <label for="escolaridade">Sua escolaridade:</label>
+            <input type="text" id="idEscolaridade" name="escolaridade" list="listEscolaridade">
+            <datalist id="listEscolaridade">
+                <option value="Ensino superior">Ensino superior</option>
+                <option value="Ensino medio">Ensino medio</option>
+                <option value="Encino fundamental">Encino fundamental</option>
+                <option value="Sem escolaridade">Sem escolaridade</option>
+            </datalist>
+            <br>
+            <br>
+            <input type="submit" name="Enviar">
+            <input type = "reset" name="Limpar">
+        </form>
+        <a href="Exercisio formulario.html">Voltar para a página anterior</a>
+    </main>
+</body>
+</html>
