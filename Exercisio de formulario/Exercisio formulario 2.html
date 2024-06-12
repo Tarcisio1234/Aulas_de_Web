@@ -11,10 +11,10 @@
         <h1>Justifique seua Entrada na Lista de Espera</h1>
         <form>
             <h2>Dados pessoais</h2>
-            <label for="genero">Genero:</label>
-            <input type="radio" name="genero" value="Masculino" required>Masculino
-            <input type="radio" name="genero" value="Feminino">Feminino
-            <input type="radio" name="genero" value="Outros">Outros
+            <label for="genero">Genero:</label><br>
+            <input type="radio" name="genero" value="Masculino" required>Masculino<br>
+            <input type="radio" name="genero" value="Feminino">Feminino<br>
+            <input type="radio" name="genero" value="Outros">Outros<br>
             <br>
             <br>
 
@@ -27,12 +27,13 @@
 
             <h2>Justifique a sua Necessidade</h2>
             <legend>Coloque a sua justificativa abaixo:</legend>
-            <textarea id="idJustificativa" name="cpJustificativa" placeholder="Digite a sua justificativa aqui:"></textarea>
+            <textarea id="idJustificativa" name="cpJustificativa" placeholder="Digite a sua justificativa aqui:" rows="5" cols="50"></textarea>
 
             <h2>Escolaridade</h2>
             <label for="escolaridade">Sua escolaridade:</label>
             <input type="text" id="idEscolaridade" name="escolaridade" list="listEscolaridade">
             <datalist id="listEscolaridade">
+                <option value="Doutorado"><Datag>Doutorado</Datag></option>
                 <option value="Ensino superior">Ensino superior</option>
                 <option value="Ensino medio">Ensino medio</option>
                 <option value="Encino fundamental">Encino fundamental</option>

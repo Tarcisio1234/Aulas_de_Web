@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <main>
+        <!-- Criando o codigo javascript-->
+        <form action="#" method="get" oninput= "reusultado.value = parseInt(cpNumero1.value)+parseInt(cpNumero2.value)">
+            <!--Criando a lista de caracteristicas pessoais positivas-->
+            <h1>Formulario de Personalidade e Saúde Mental</h1>
+            <h2>Suas Caracteristicas Positivas</h2>
+            <label>Marque as caractristicas que mais combinam com você:</label><br>
+
+            <input type="checkbox" id="idAlegre" value="Alegre" name="confirmar">
+            <label for="idAlegre">Alegre</label><br>
+
+            <input type="checkbox" id="idAmigavel" value="Amigavel" name="confirmar">
+            <label for="idAmigavel">Amigavel</label><br>
+
+            <input type="checkbox" id="idCriativo" value="Criativo" name="confirmar">
+            <label for="idCriativo">Criativo</label><br>
+
+            <input type="checkbox" id="idCurioso" value="Curioso" name="confirmar">
+            <label for="idCurioso">Curioso</label><br>
+
+            <input type="checkbox" id="idEmpatico" value="Empático" name="confirmar">
+            <label for="idEmpatico">Empático</label><br>
+
+            <input type="checkbox" id="idGeneroso" value="Generoso" name="confirmar">
+            <label for="idGeneroso">Genero</label><br>
+
+            <input type="checkbox" id="idInteligente" value="Inteligente" name="confirmar">
+            <label for="idInteligente">Inteligente</label><br>
+
+            <input type="checkbox" id="idOrganizado" value="Organizado" name="confirmar">
+            <label for="idOrganizado">Organizado</label><br>
+
+            <h2> Saúde Mental</h2>
+            <label for="idSaudeMental">Selecione o que melhor se indentifica:</label>
+            <!--Criando a lista com os topcos sobre saúde mental-->
+            <select id="idSaudeMental" name="SaudeMental">
+
+                <optgroup label="Psicólogo">
+                    <option value="Nunca fui">Nunca fui</option>
+                    <option value="Ja fui">Já fui</option>
+                    <option value="Estou indo">Estou indo</option>
+                </optgroup>
+
+                <optgroup label="Outro profissional">
+                    <option value="Outro Psiquiatra">Outro Psiquiatra</option>
+                    <option value="Nunca Precisei">Nunca Precisei</option>
+                </optgroup>
+                
+            </select>
+            <!--Criando o retangulo no site para realisar a soma-->
+            <fieldset>
+
+                <legend>Conclusão</legend>
+                <legend>Faça a some e conclua o cadastro:</legend>
+                <label for="cpNumero">Número 1:</label>
+                <input type="number" id="idNumero1" name="cpNumero1" required><br>
+                <label for="cpNumero2">Número 2:</label>
+                <input type="number" id="idNumero2" name="cpNumero2" required><br>
+                <label for="reusultado">Reseultado da soma:</label>
+                <output name="reusultado" id="reusultado">0</output>
+
+            </fieldset>
+            <br>
+            <!--Criando os botões-->
+            <button ondblclick="verificarCaracteristicas()">Enviar</button>
+            <input type="reset" value="Limpar"><br>
+        </form>
+    </main>
+    <!-- Criando o roda pé do site com o botão de voltar para o início-->
+    <footer>
+        <a href="#">Inicio</a>
+    </footer>
+</body>
+
+</html>
