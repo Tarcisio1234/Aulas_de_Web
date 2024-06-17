@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+    <style>
+        h1{
+            color: tomato;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        table{
+            border: 2px green solid;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabela de siglas</h1>
+    <table> 
+        <tr><!-- linha-->
+            <th>Siglas</th><!--coluna no cabeçalho-->
+            <th>Estados</th>
+            <th>Cidades</th>
+        </tr>
+        <tr>
+            <td>MG</td>
+            <td>Minas Gerais</td>
+            <td>Juiz de Fora</td>
+        </tr>
+        <tr>
+            <td>SP</td>
+            <td>São Paulo</td>
+            <td>Campinas</td>
+        </tr>
+        <tr>
+            <td>RJ</td>
+            <td>Rio de Janeiro</td>
+            <td>Paracambi</td>
+        </tr>
+        <tr>
+            <td colspan="2">Total de cidades no país</td><!-- Mesclando linhas em colunas diferentes-->
+            <td>5570</td>
+        </tr>
+    </table>
+    <h2>Tabela com tags semanticas</h2>
+    <table>
+        <thead><!-- Cabeçalho da tabela-->
+            <tr>
+                <th>Sabores</th>
+                <th>Origem</th>
+                <th>Tipo de prato</th>
+            </tr>
+        </thead>
+        <tbody><!-- Corpo da tabela-->
+            <tr>
+                <td>Macarronada</td>
+                <td>Italiana</td>
+                <td>Refeição</td>
+            </tr>
+            <tr>
+                <td>Sorvete</td>
+                <td>Italiano</td>
+                <td>Sobremesa</td>
+            </tr>
+            <tr>
+                <td>Pão Françes</td>
+                <td>França</td>
+                <td>Cafe da manhã</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Informaçoes da minha cabeça</td><!-- Anexando o todas as linhas do rodapé-->
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

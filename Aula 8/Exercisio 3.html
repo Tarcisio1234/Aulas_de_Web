@@ -11,7 +11,7 @@
 <body>
     <main>
         <!-- Criando o codigo javascript-->
-        <form action="#" method="get" oninput= "reusultado.value = parseInt(cpNumero1.value)+parseInt(cpNumero2.value)">
+        <form action="#" method="get" oninput= "cpreusultado.value = parseInt(cpNumero1.value)+parseInt(cpNumero2.value)">
             <!--Criando a lista de caracteristicas pessoais positivas-->
             <h1>Formulario de Personalidade e Saúde Mental</h1>
             <h2>Suas Caracteristicas Positivas</h2>
@@ -64,16 +64,16 @@
                 <legend>Conclusão</legend>
                 <legend>Faça a some e conclua o cadastro:</legend>
                 <label for="cpNumero">Número 1:</label>
-                <input type="number" id="idNumero1" name="cpNumero1" required><br>
+                <input type="number" id="idNumero1" name="cpNumero1" ><br>
                 <label for="cpNumero2">Número 2:</label>
-                <input type="number" id="idNumero2" name="cpNumero2" required><br>
+                <input type="number" id="idNumero2" name="cpNumero2" ><br>
                 <label for="reusultado">Reseultado da soma:</label>
-                <output name="reusultado" id="reusultado">0</output>
+                <output name="cpreusultado" id="reusultado">0</output>
 
             </fieldset>
             <br>
             <!--Criando os botões-->
-            <button ondblclick="verificarCaracteristicas()">Enviar</button>
+            <button onclick="verificarCaracteristicas()">Enviar</button>
             <input type="reset" value="Limpar"><br>
         </form>
     </main>
@@ -81,6 +81,26 @@
     <footer>
         <a href="#">Inicio</a>
     </footer>
+    <script>
+        function verificarCaracteristicas(){
+            const checkboxs = document.querySelectorAll('input[type="checkbox"]');
+            let selectCount = 0;
+            for( const checkbox of checkboxs){
+                if(checkbox.checked){
+                    selectCount++;
+                }
+            }
+            if (selectCount <1){
+                alert("Selecione pelo menos 1 caracteristica");
+            }
+            else if(selectCount >3){
+                alert("Selecione no maximo 3");
+            }
+            else{
+                alert("Você selecionou"+ selectCount+"caracteristica \n Boa sorte :)");
+            }
+        }
+    </script>
 </body>
 
 </html>
