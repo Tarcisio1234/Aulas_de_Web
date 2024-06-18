@@ -1,0 +1,32 @@
+.paragrafo1{/* o "." e referente a classe*/
+    background-color: bisque;/* cor do fundo do paragrafo*/
+    color: black;/* cor da fonte presente no paragrafo*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;/*estilo de fonte*/
+    font-size: 15px;/* tanho da fonte*/
+    line-height: 1.5;/* distancia entre as linhas */
+    margin: 5px;/* margim do paragrafo*/
+    text-indent: 1em;/*espaço da primeira linha do paragrafo*/
+    text-align: justify;/* alinhamento do texto*/
+}
+.citacao{
+    background-color: bisque;
+    text-align: center;
+}
+.paragrafo2{
+    background-color: rgb(75, 182, 75);
+    color: rgb(103, 103, 253);
+    font-family: Georgia;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+    line-height: 1.5;
+    padding: 10px;/*add espaço entre o texto e a cor*/
+}
+cite{
+    background-color: rgb(251, 149, 149);
+}
+#meuId{
+    margin-top: 25px;
+    border: 5px violet dotted;
+    padding: 15px;
+}

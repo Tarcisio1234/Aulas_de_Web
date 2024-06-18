@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela</title>
     <style>
-        h1{
+        h1 {
             color: tomato;
             text-align: center;
         }
-        h2{
+
+        h2 {
+            color: tomato;
             text-align: center;
         }
-        table{
-            border: 2px green solid;
+
+        table th {
             text-align: center;
+            background-color: rgb(46, 146, 46);
+        }
+
+        table tr:nth-child(even) {
+            /* colorindo as linhas de numero pares*/
+            background-color: coral;
+            color: white;
+        }
+
+        table,
+        table td,
+        table th {
+            border: 2px greenyellow groove;
         }
     </style>
 </head>
+
 <body>
     <h1>Tabela de siglas</h1>
-    <table> 
+    <table>
         <tr><!-- linha-->
             <th>Siglas</th><!--coluna no cabeçalho-->
             <th>Estados</th>
             <th>Cidades</th>
         </tr>
         <tr>
-            <td>MG</td>
+            <td>MG</td><!--colunas em baixo do cabeçalho-->
             <td>Minas Gerais</td>
             <td>Juiz de Fora</td>
         </tr>
@@ -80,4 +97,5 @@
         </tfoot>
     </table>
 </body>
+
 </html>
