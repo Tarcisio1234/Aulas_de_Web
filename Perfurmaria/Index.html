@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" title="text/css" href="CSS/estiloIndex.css">
     <title>Perfumaria News</title>
 </head>
+
 <body>
     <header>
         <h1>Perfumaria News</h1>
-        <nav>
+        <nav><!-- sinalisa que essa parte do código é possui menus de navegação-->
             <ul>
-                <li><a href="Index.html">Home</a></li>
-                <ul>
-                    <li><a href="Noticias.html">Noticias</a></li>
-                    <li><a href="Resenha.html">Resenha</a></li>
-                </ul>
+                <li class="dropdown"><a href="Index.html">Home</a>
+                    <ul class="dropdown-child">
+                        <li><a href="Noticias.html">Noticias</a></li>
+                        <li><a href="Resenha.html">Resenha</a></li>
+                    </ul>
+                </li>
                 <li><a href="Galeria.html">Galeria</a></li>
-                <li><a href="#">Categoria</a></li>
-                <ul>
-                    <li><a href="#">Perfurme feminino</a></li>
-                    <li><a href="#">Perfume Masculino</a></li>
-                    <li><a href="#">Perfume Unissex</a></li>
-                    <li><a href="#">Marcas</a></li>
-                </ul>
+                <li class="dropdown"><a href="#">Categoria</a>
+                    <ul class="dropdown-child">
+                        <li><a href="#">Perfurme feminino</a></li>
+                        <li><a href="#">Perfume Masculino</a></li>
+                        <li><a href="#">Perfume Unissex</a></li>
+                        <li><a href="#">Marcas</a></li>
+                    </ul>
+                </li>
                 <li><a href="Contato.html">Contato</a></li>
             </ul>
         </nav>
@@ -32,12 +37,14 @@
         <hr>
         <section>
             <h2> Descubra o Mundo dos Perfumes</h2>
-            <img src="IMG/vitrine.jpg" title="Vitrine" alt="Uma vitine de perfumes, com perfumes de diferentes tipos" width="1880px" height="480px">
+            <img src="IMG/vitrine.jpg" title="Vitrine" alt="Uma vitine de perfumes, com perfumes de diferentes tipos"
+                width="1880px" height="480px">
             <p>Explore as últimas notícias,resenhas,dicas e entrevistas com especialistas</p>
             <a href="#">Saibas Mais</a>
 
             <h2> Ultimas Noticias</h2>
-            <img src="IMG/perfumes.jpg" title="Doudigabana lança novos perfumas" alt="Doudigabana lança perfumes novos, com o novo tipo de fragancia" width="25%">
+            <img src="IMG/perfumes.jpg" title="Doudigabana lança novos perfumas"
+                alt="Doudigabana lança perfumes novos, com o novo tipo de fragancia" width="25%">
             <h3> Titulo da notícia principal</h3>
             <p>Resumo da notícia principal....</p>
             <a href="#">Leia Mais</a>
@@ -57,4 +64,5 @@
         <p>Tarcísio Alves Machado</p>
     </footer>
 </body>
+
 </html>
