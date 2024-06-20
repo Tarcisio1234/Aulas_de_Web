@@ -1,39 +1,148 @@
-nav ul{
-    list-style-type: none; /* retira a marcação da da lista*/
+nav ul {
+    list-style-type: none;
+    /* retira a marcação da da lista*/
     padding: 0;
     margin: 0;
 }
-nav ul li{
-    position:relative;
+
+nav ul li {
+    position: relative;
     display: inline-block;
 }
-nav ul li a{ 
+
+nav ul li a {
     text-decoration: none;
     display: block;
     padding: 10px;
-    background-color: black;
+    background-color: rgb(66, 65, 65);
     color: white;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     background-color: #d64234;
 }
-.dropdown-child{
+
+.dropdown-child {
     display: none;
-    background-color: black;
+    background-color: rgb(59, 59, 59);
     position: absolute;
     top: 100%;
     left: 0;
     min-width: 160px;
 }
-.dropdown-child a{
-    color: blue;
+
+.dropdown-child a {
+    color: rgb(255, 140, 0);
     padding: 5px;
     text-decoration: none;
     display: block;
 }
-.dropdown-child li{
+
+.dropdown-child li {
     display: block;
 }
-.dropdown:hover .dropdown-child{
+
+.dropdown:hover .dropdown-child {
     display: block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    color: #b31b00;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    background-color: #c1bfbf;
+    padding: 20px 0;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    /* ocupa o espaço restante na horizontal*/
+    padding: 20px;
+    box-sizing: border-box;
+    /* inclui padding na largura*/
+}
+
+#banner {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+aside video {
+    width: 100%;
+    height: auto;
+}
+
+aside {
+    flex: 0 0 300px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+section {
+    margin-bottom: 40 px;
+    width: 100%;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+#imgNoticia {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#imgNoticia:hover {
+    transform: scale(1.2);
+}
+
+.noticia {
+    display: flex;
+}
+footer{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+footer ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
