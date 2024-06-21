@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" title="text/css" href="CSS/estiloIndex.css">
+    <link rel="stylesheet" title="text/css" href="CSS/estiloNoticias.css">
     <title>Noticias</title>
 </head>
 
@@ -13,27 +15,31 @@
         <h1>Perfumaria News</h1>
         <nav>
             <ul>
-                <li><a href="Index.html">Home</a></li>
-                <ul>
-                    <li><a href="Noticias.html">Noticias</a></li>
-                    <li><a href="Resenha.html">Resenha</a></li>
-                </ul>
+                <li class="dropdown"><a href="Index.html">Home</a>
+                    <ul class="dropdown-child">
+                        <li><a href="Noticias.html">Noticias</a></li>
+                        <li><a href="Resenha.html">Resenha</a></li>
+                    </ul>
+                </li>
                 <li><a href="Galeria.html">Galeria</a></li>
-                <li><a href="#">Categoria</a></li>
-                <ul>
-                    <li><a href="#">Perfurme feminino</a></li>
-                    <li><a href="#">Perfume Masculino</a></li>
-                    <li><a href="#">Perfume Unissex</a></li>
-                    <li><a href="#">Marcas</a></li>
-                </ul>
+                <li class="dropdown"><a href="#">Categoria</a>
+                    <ul class="dropdown-child">
+                        <li><a href="#">Perfurme feminino</a></li>
+                        <li><a href="#">Perfume Masculino</a></li>
+                        <li><a href="#">Perfume Unissex</a></li>
+                        <li><a href="#">Marcas</a></li>
+                    </ul>
+                </li>
                 <li><a href="Contato.html">Contato</a></li>
             </ul>
+            <h2>Descubra o mundo dos perfumes</h2>
         </nav>
+        <img id="banner" src="IMG/vitrine.jpg" title="Vitrine"
+            alt="Uma vitine de perfumes, com perfumes de diferentes tipos">
     </header>
-    <hr>
     <main><!--Conteudo principal do site-->
         <section>
-            <article>
+            <article class="artigo">
                 <h2>Assunto ficticio</h2>
                 <p>Mussum Ipsum, cacilds vidis litro abertis. Cevadis im ampola pa arma uma pindureta. Suco de cevadiss
                     deixa as pessoas mais interessantis. Não sou faixa preta cumpadi, sou preto
@@ -58,7 +64,8 @@
                     alcoolatra anonimis.</p>
                 </p>
             </article>
-            <article>
+            <br><br>
+            <article class="artigo">
                 <h2>Assunto ficticio diferente</h2>
                 <p>Mussum Ipsum, cacilds vidis litro abertis. Cevadis im ampola pa arma uma pindureta. Suco de cevadiss
                     deixa as pessoas mais interessantis. Não sou faixa preta cumpadi, sou preto
@@ -83,12 +90,22 @@
                     alcoolatra anonimis.</p>
                 </p>
             </article>
-            <article>
-                <iframe src="https://tribunademinas.com.br/" name="Tribuna de Minas" scrolling="no" width="25%" height="25%" style="border: 2px solid #ffeb0a;"></iframe>
+            <br><br><br>
+            <article class="artigoImagens">
+                <img src="IMG/imagem1.jpg" alt="Essa é a primeira imagem">
+                <img src="IMG/perfume2.jpg" alt="Essa é a segunda imagem">
+                <img src="IMG/perfume3.jpg" alt="Essa é a terceira foto">
             </article>
         </section>
-        <hr>
     </main>
+    <footer>
+        <p>&#174; 2024 Perfumaria News - Todos os direitos reservados.</p>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">X/Twitter</a></li>
+        </ul>
+        <p>Tarcísio Alves Machado</p>
+    </footer>
 </body>
 
 </html>

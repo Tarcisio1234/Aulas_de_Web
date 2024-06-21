@@ -1,0 +1,41 @@
+header {
+    background-color: rgb(35, 35, 120);
+    color: white;
+}
+
+main {
+    background: linear-gradient(to bottom, rgb(71, 71, 126), rgb(162, 162, 255));
+}
+
+.artigo {
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.artigo p {
+    margin: 7px;
+}
+
+.artigoImagens {
+    display: flex;
+    justify-content: center;
+    /*justify-content: space-between;*/
+    background-color: white;
+    border-radius: 15px;
+}
+
+.artigoImagens img {
+    margin: 40px;
+    display: inline-block;
+    max-width: 250px;
+    border: 6px solid #e99e80;
+    border-radius: 20px;
+}
+
+footer {
+    background-color: rgb(95, 95, 230);
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
