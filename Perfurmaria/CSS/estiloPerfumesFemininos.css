@@ -1,0 +1,46 @@
+header {
+    background-color: rgb(255, 213, 200);
+    padding: 35px ;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 0 0 55px 55px;
+}
+#navegacao{
+    padding: 0 0 20px 0;
+}
+#banner{
+    width: 100%;
+    height: 350px;
+    max-width: 900px;
+    border-radius: 25px;
+}
+main{
+    border-radius: -55px -55px 0 0;
+    background-color: rgb(231, 225, 223);
+}
+.corFundo{
+    background-color: rgb(231, 225, 223);
+}
+img{
+    width: 100%;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+}
+.foto{
+    display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 30px;
+}
+figcaption{
+    text-align: justify;
+    font-size: 18px;
+    padding: 30px;
+}
+footer{
+    background-color: rgb(255, 213, 200);
+    color: black;
+    border-radius: 55px 55px 0 0;
+}

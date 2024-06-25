@@ -16,6 +16,7 @@ body{
     height: 100%;
     object-fit: cover;
     border: 6px double rgb(237, 157, 194);
+    border-radius: 10px;
 }
 figcaption{
     text-align: center;
