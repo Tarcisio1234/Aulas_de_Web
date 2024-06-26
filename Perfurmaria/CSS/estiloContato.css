@@ -1,0 +1,18 @@
+form{
+    background-color: bisque;
+    min-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+form label{
+    display: flex;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+form textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    resize: none;
+}
