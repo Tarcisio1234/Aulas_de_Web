@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" title="text/CSS" href="CSS/estiloIndex.css">
+    <title>Blog do Senac</title>
+</head>
+
+<body>
+    <header>
+        <h1>Blog do Senac</h1>
+        <nav>
+            <div class="menu">
+                <a href="#introducao">Introdução</a>
+                <a href="#assunto">Assunto da Semana</a>
+                <a href="#horocopo">Horócopo</a>
+                <a href="#queeusou">Quem Sou Eu</a>
+                <a href="#contatos">Contatos</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="introducao" class="section">
+            <h1>Introdução</h1>
+            <p>Bem-vindo ao meu blog! Aqui você encontrara uma variedade de conteudo interessantes</p>
+        </div>
+
+
+
+
+
+        <div id="assunto" class="section">
+            <h1>Assunto da Semana</h1>
+            <p>Essa semana estamos discutindo....</p>
+            <label for="dias-semana">Escolha um dia da semana:</label>
+            <select name="dias-semana" id="dias-semana" onchange="carregarIframe()">
+                <option value="">Seleciona um dia</option>
+                <option value="segunda-fera.html">Segunda-fera</option>
+                <option value="terca-fera.html">Terça-fera</option>
+                <option value="quarta-fera.html">Quarta-fera</option>
+                <option value="quinta-fera.html">Quinta-fera</option>
+                <option value="sexta-fera.html">Sexta-fera</option>
+                <option value="sabado.html">Sábado</option>
+            </select>
+
+            <iframe id="iframe-assunto" src=""></iframe>
+
+
+
+
+
+        </div>
+        <div id="horocopo" class="section">
+            <h1>Horóscopo</h1>
+            <p>Confira o seu horóscopo semanal....</p>
+        </div>
+
+        <div id="queeusou" class="section">
+            <h1>Quem Sou Eu</h1>
+            <p>Saiba sobre mim...</p>
+        </div>
+        <div id="contatos" class="section">
+            <p>Entre em contado comigo através do Whatsapp....</p>
+        </div>
+    </main>
+    <script>
+        function carregarIframe(){
+            var select = document.getElementById("dias-semana");
+            var iframe = document.getElementById("iframe-assunto");
+            var dia = select.value;
+
+            if(dia){
+                iframe.src = dia;
+                iframe.style.display ="block";
+            }
+            else{
+                iframe.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
