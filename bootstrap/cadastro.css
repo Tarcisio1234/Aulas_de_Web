@@ -1,0 +1,63 @@
+body{
+    font-family: 'Abel', 'Courier New';
+    margin: 0;
+    padding: 0;
+    background-color: rgba(231, 212, 189, 0.473);
+    color: #333;
+}
+ 
+.login{
+    background-color: rgba(231, 212, 189, 0.473);
+    max-width: 25%;
+    margin: auto;
+    margin-top: 300px;
+    padding: 20px;
+    border-radius: 30px;
+    border: 2px solid rgba(231, 212, 189, 0.473);
+ 
+    margin-bottom: 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+}
+ 
+.cadastro{
+    background-color: rgba(231, 212, 189, 0.473);
+    max-width: 75%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 30px;
+    border: 2px solid rgba(205, 186, 164, 0.262);
+    
+    margin-bottom: 80px;
+    flex-direction: column;
+    display: flex;
+}
+
+form input[type="email"]{
+    margin-bottom: 15px;
+}
+ 
+#inputEstado{
+    width: 15%;
+    margin-bottom: 15px;
+}
+ 
+.endereco{
+    width: 98%;
+    margin-bottom: 15px;
+}
+ 
+nav{  
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(231, 212, 189, 0.966);
+    text-align: center;
+    margin-inline: 0;
+}
+ 
+div{
+    margin-left: 20px;
+}
+ 
+
