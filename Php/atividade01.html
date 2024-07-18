@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #idBoxFrom label {
+            display: flex;
+            align-content: space-around;
+        }
+
+        .organizador{
+            align-content: space-around;
+        }
+
+        .fildseter1{
+            width: 50%;
+        }
+    </style>
+    <title>Formulario</title>
+</head>
+
+<body>
+    <main>
+
+        <fieldset class="fildseter1">
+            <div id="idBoxFrom">
+                <form action="php/idade.php" method="get">
+                    <label for="txtNome">Nome:</label>
+                    <input type="text" id="idNome" placeholder="Digite o seu nome:" name="txtNome">
+                    <label for="txtAno">Ano de nacimento:</label>
+                    <input type="number" id="idAno" placeholder="Digite a sua Idade:" name="txtAno">
+
+            </div>
+            <div id="organizar">
+                <fieldset id="boxSexo">
+                    <label for="boxSexo">Qual o seu sexo ? </label>
+                    <input type="radio" id="idSexoMasculino" name="txtSexo" value="masculino">
+                    <label for="idSexoMasculino">Masculino</label>
+                    <input type="radio" id="idSexoFeminino" name="txtSexo" value="feminino">
+                    <label for="idSexoFeminino">Feminino</label>
+                    
+            </div>
+            <input type="submit" value="Enviar">
+            </fieldset>
+            
+        </fieldset>
+        </form>
+    </main>
+</body>
+
+</html>
