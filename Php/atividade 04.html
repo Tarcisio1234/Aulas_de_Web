@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando o imc</title>
+</head>
+
+<body>
+    <main>
+        <h1>Calculadora de Peso</h1>
+        <p>Calculadora para calcular o peso ideal dependente da altura e sexo</p>
+        
+
+            <form action="php/calcularImc.php" method="get">
+                <label for="cpAltura">Digite a sua altura: (Ex:1.75)</label>
+                <input type="text" pattern="\d+(,\d+)?|\d+(\.\d+)?" name="cpAltura" id="idAltura">
+                <br>
+                <br>
+                <fieldset name="cpSexo">
+                    <label for="cpSexo">Qual o seu sexo ?</label>
+                    <input type="radio" id="sxMas" name="cpSexo" value="Masculino">
+                    <label for="sxMas">Masculino</label>
+
+                    <input type="radio" id="sxFe" name="cpSexo" value="Feminino">
+                    <label for="sxFe">Feminino</label>
+                </fieldset>
+                <input type="submit" name="calcularImc" value="Enviar">
+
+        </form>
+    </main>
+</body>
+
+</html>
