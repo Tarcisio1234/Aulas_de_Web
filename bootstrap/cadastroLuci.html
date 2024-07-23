@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Estilos adicionais -->
+    <style>
+        body {
+            background-color: #751ba2;
+            padding-top: 4rem;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #eeede6;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">FIC-0159</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home<span class="sr-only">(Página atual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="exercicioLogar.html">Logar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Sair</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="form-container">
+            <h2>Formulário de Cadastro</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" class="form-control" id="idNome" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" class="form-control" id="idTelefone" placeholder="(XX) XXXX-XXXX">
+                </div>
+                <div class="form-group">
+                    <label for="profissao">Profissão</label>
+                    <input type="text" class="form-control" id="idProfissao"
+                        placeholder="Digite sua profissão">
+                </div>
+                <div class="form-group">
+                    <label for="sexo">Sexo</label>
+                    <select class="form-control" id="idSexo">
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="idEndereco" placeholder="Digite seu endereço">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="estado">Estado</label>
+                        <select class="form-control" id="idtEstado">
+                            <option selected disabled>Carregando estados...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="CEP">CEP</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="idCEP" placeholder="Digite seu CEP">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button"
+                                    id="btnBuscarCEP">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Endereço de email</label>
+                    <input type="email" class="form-control" id="idEmail" aria-describedby="emailHelp"
+                        placeholder="Digite seu email">
+                    <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu email com
+                        ninguém.</small>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" class="form-control" id="idSenha" placeholder="Senha">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputConfirmPassword">Confirme a Senha</label>
+                    <input type="password" class="form-control" id="exampleInputConfirmPassword"
+                        placeholder="Confirme sua senha">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Concordo com os termos</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Cadastrar</button>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Cancelar</button>
+                <p class="text-center mt-3 mb-0"><a href="exercicioLogar.html">Já tem uma conta? Faça login aqui.</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-xZYUe2/r2Df+FbC1XG8cMnJrwFt4vdo6xqD5hZsQ6wRKgXqGJl91lrB+r5lVlXW4"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-+0n0xVW2OVR+8q4Zuj5qftFtFZlR2vpoK0Fpbrqy8Q/okc4JcXn2rsM1inBkDJdx"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Habilitar botão de submit quando o checkbox for marcado
+        document.getElementById('exampleCheck1').addEventListener('change', function () {
+            var btnSubmit = document.getElementById('btnSubmit');
+            btnSubmit.disabled = !this.checked;
+        });
+
+        // Função para carregar estados via API do IBGE
+        function carregarEstados() {
+            var selectEstado = document.getElementById('exampleInputEstado');
+
+            fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(estado => {
+                        var option = document.createElement('option');
+                        option.value = estado.sigla;
+                        option.textContent = estado.nome;
+                        selectEstado.appendChild(option);
+                    });
+                    selectEstado.disabled = false;
+                    selectEstado.innerHTML = '<option selected disabled>Selecione o estado...</option>' + selectEstado.innerHTML;
+                })
+                .catch(error => console.error('Erro ao carregar estados:', error));
+        }
+
+        // Carregar estados ao carregar a página
+        document.addEventListener('DOMContentLoaded', function () {
+            carregarEstados();
+        });
+
+        // Evento para buscar CEP e preencher endereço automaticamente
+        document.getElementById('btnBuscarCEP').addEventListener('click', function () {
+            var cep = document.getElementById('exampleInputCEP').value.replace(/\D/g, '');
+
+            if (cep.length != 8) {
+                alert('CEP inválido');
+                return;
+            }
+
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.erro) {
+                        document.getElementById('exampleInputEndereco').value = `${data.logradouro}, ${data.bairro}, ${data.localidade}, ${data.uf}`;
+                        document.getElementById('exampleInputEstado').value = data.uf;
+                    } else {
+                        alert('CEP não encontrado');
+                    }
+                })
+                .catch(error => console.error('Erro ao buscar CEP:', error));
+        });
+    </script>
+
+</body>
+
+</html>
