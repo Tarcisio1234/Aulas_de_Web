@@ -36,21 +36,23 @@
     </header>
     <main>
         <h2>Entre em contato</h2>
-        <form action="" method="post">
+        <div id="messageBox" style="display: none;"></div>
+       <form action="php/salvarMensagem.php" method="post">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="idNome">
             <label for="assunto">Assunto</label>
             <select name="assunto" id="">
-                <option value="">Elogio</option>
-                <option value="">Reclamação</option>
-                <option value="">Sugestão</option>
-                <option value="">Duvida</option>
+                <option value="Elogio">Elogio</option>
+                <option value="Reclamação">Reclamação</option>
+                <option value="Sugestão">Sugestão</option>
+                <option value="Duvida">Duvida</option>
             </select>
-            <textarea name="" id="" cols="30" rows="10" maxlength="250"></textarea>
+            <textarea name="mensagem" id="" cols="30" rows="10" maxlength="250"></textarea>
             <input type="email" name="email" id="idEmail" placeholder="digite seu E-mail">
             <input type="submit" value="Enviar">
             <input type= "reset" value="Canselar">
         </form>
+    
     </main>
     <footer>
         <p>&#174; 2024 Perfumaria News - Todos os direitos reservados.</p>
@@ -60,6 +62,25 @@
         </ul>
         <p id="creditos">Tarcísio Alves Machado</p>
     </footer>
+    <script>
+        window.onload = function(){
+            const urlParems = new URLSearchParams(window.location.search);
+            const status = urlParems.get('status');
+            const messageBox = document.getElementById('messageBox');
+
+            if( status === 'success'){
+                messageBox.style.display = 'block';
+                messageBox.innerText = 'Messagem enviada com sucesso!';
+                messageBox.style.color = 'green'
+            }
+
+            else if(status ==='error'){
+                messageBox.style.display = 'block';
+                messageBox.innerText = 'Houve um erro ao enviar a mensagem.';
+                messageBox.style.color = 'red'
+            }
+        }
+    </script>
 </body>
 
 </html>
