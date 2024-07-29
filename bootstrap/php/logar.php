@@ -22,7 +22,7 @@ if(isset($_POST['logar'])){
         $result = $stmt->get_result();
         if($result->num_rows == 1){
             $usuario = $result->fetch_assoc();
-            //$_SESSION['id'] = $usuario['idusuario'];
+            $_SESSION['id'] = $usuario['idusuario'];
             $_SESSION['nome'] = $usuario['nome'];
             echo"
             <script>
