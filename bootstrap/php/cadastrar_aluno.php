@@ -34,8 +34,8 @@
             $declaracao1->store_result();
             if($declaracao1->num_rows>0){
                 echo "<script> alert('CPF já cadastrado!!!');
-                window.location.href = '../cadAluno.html';</script>";
-             //   $declaracao1->close();
+                window.location.href = '../cadAluno.php';</script>";
+                $declaracao1->close();
             }
             else{
                 $declaracao1->close();
@@ -43,10 +43,43 @@
                 $declaracao->bind_param("ssssss",$nome, $cpf,$celular,$whatsapp, $email, $categoria);
                 $declaracao->execute();
                 echo "<script> alert('Cadastado com sucesso');
-                window.location.href = '../cadAluno.html';</script>";
+                window.location.href = '../cadAluno.php';</script>";
                 $declaracao->close();
             }
         }
         exit;
     }
+    if(isset($_POST['Buscar'])){
+        $buscar_cpf = $_POST['cpf'];
+
+        $stmt = $conexao->prepare("select nome,cpf,celular,whatsapp,email,categoria from cadaluno where cpf = ?");
+        $stmt->bind_param("s",$buscar_cpf);
+        $stmt->execute();
+        $stmt->store_result();
+
+        if($stmt->num_rows >0){
+            $stmt->bind_result($nome, $cpf, $celular, $whatsapp, $email, $categoria);
+            $stmt->fetch();
+            $_SESSION['nome'] = $nome;
+            $_SESSION['celular'] = $celular;
+            $_SESSION['cpf'] = $cpf;
+            $_SESSION['whatsapp'] = $whatsapp;
+            $_SESSION['email'] = $email;
+            $_SESSION['categoria'] = $categoria;
+            header("Location: ../cadAluno.php");
+                 
+            /*echo"
+            <script>
+            window.location.href = '../cadAluno.php'
+            let meuCampo = document.getElementById('nome');
+            meuCampo.value = '<?php echo ($nome) ?>';</script>";*/
+        }
+        else{
+            echo "<script> alert('Cpf não encontrado')</script>";
+        }
+        $stmt->close();
+        $conexao->close();
+
+    }
+
 ?>
