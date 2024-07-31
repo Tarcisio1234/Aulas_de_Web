@@ -17,10 +17,10 @@
                 <input type="text" id="nome"  name="nome" value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>">
                 
                 <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" value="<?php echo isset($_SESSION['cpf']) ? $_SESSION['cpf'] : ''; ?>">
+                <input type="text" id="cpf" name="cpf" value="<?php echo isset($_SESSION['cpf']) ? $_SESSION['cpf'] : ''; ?>" oninput = "mascaracpf(this)" maxlength="14">
                 
                 <label for="celular">Celular:</label>
-                <input type="text" id="celular" name="celular" value="<?php echo isset($_SESSION['celular'])? $_SESSION['celular'] : ''; ?>">
+                <input type="text" id="celular" name="celular" value="<?php echo isset($_SESSION['celular'])? $_SESSION['celular'] : ''; ?>" oninput = "mascaraTelefone(this)" maxlength ="15">
                 
                 <label for="zap">Tem WhatsApp?</label>
                 <select id="zap" name="whatsapp">
@@ -33,11 +33,11 @@
                 
                 <label for="categoria">Categoria:</label>
                 <select id="categoria" name="categoria">
-                    <option value="A" value="<?php echo isset($_SESSION['categoria' ])? $_SESSION['categoria'] : ''; ?>">A</option>
-                    <option value="B" value="<?php echo isset($_SESSION['categoria' ])? $_SESSION['categoria'] : ''; ?>">B</option>
-                    <option value="C" value="<?php echo isset($_SESSION['categoria' ])? $_SESSION['categoria'] : ''; ?>">C</option>
-                    <option value="D" value="<?php echo isset($_SESSION['categoria' ])? $_SESSION['categoria'] : ''; ?>">D</option>
-                    <option value="E" value="<?php echo isset($_SESSION['categoria' ])? $_SESSION['categoria'] : ''; ?>">E</option>
+                    <option value="A" <?php echo (isset($_SESSION['categoria']) && $_SESSION['categoria'] == 'A') ? 'selected' : '';?>>A</option>
+                    <option value="B" <?php echo (isset($_SESSION['categoria']) && $_SESSION['categoria'] == 'B') ? 'selected' : '';?>>B</option>
+                    <option value="C" <?php echo (isset($_SESSION['categoria']) && $_SESSION['categoria'] == 'C') ? 'selected' : '';?>>C</option>
+                    <option value="D" <?php echo (isset($_SESSION['categoria']) && $_SESSION['categoria'] == 'D') ? 'selected' : '';?>>D</option>
+                    <option value="E" <?php echo (isset($_SESSION['categoria']) && $_SESSION['categoria'] == 'E') ? 'selected' : '';?>>E</option>
                 </select>
                 
                 <button type="submit" name="Cadastrar" class="button">Cadastrar</button>
@@ -45,7 +45,30 @@
                 
             </form>
         </div>
-        
+        <?php
+            unset($_SESSION['nome']);
+            unset($_SESSION['celular']);
+            unset($_SESSION['cpf']);
+            unset($_SESSION['whatsapp']);
+            unset($_SESSION['email']);
+            unset($_SESSION['categoria']);
+        ?>
+        <script>
+        function mascaracpf(cpf) {
+            cpf.value = cpf.value.replace(/\D/g,"")
+            .replace(/(\d{3})(\d)/, "$1.$2")
+            .replace(/(\d{3})(\d)/, "$1.$2")
+            .replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+        }
+
+        function mascaraTelefone(telefone) {
+            telefone.value = telefone.value.replace(/\D/g,"")
+            .replace(/(\d{2})(\d)/, "($1) $2")
+            .replace(/(\d{4})(\d)/, "$1-$2")
+            .replace(/(\d{4,5})(\d{4})$/, "$1-$2")
+        }
+
+    </script>
     </body>
     </html>
 

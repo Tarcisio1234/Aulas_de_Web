@@ -68,11 +68,6 @@
             $_SESSION['categoria'] = $categoria;
             header("Location: ../cadAluno.php");
                  
-            /*echo"
-            <script>
-            window.location.href = '../cadAluno.php'
-            let meuCampo = document.getElementById('nome');
-            meuCampo.value = '<?php echo ($nome) ?>';</script>";*/
         }
         else{
             echo "<script> alert('Cpf não encontrado')</script>";
