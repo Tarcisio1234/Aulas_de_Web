@@ -61,7 +61,7 @@
 <body>
     <div class="container">
         <h1>Buscar Aulas Agendadas</h1>
-        <form class="search-form" method="POST" action="php/buscaAula.php">
+        <form class="search-form" method="POST" action="php/buscarAula.php">
             <input type="text" name="instrutor" placeholder="Nome do Instrutor">
             <input type="text" name="nome_aluno" placeholder="Nome do Aluno">
             <button type="submit">Buscar</button>
