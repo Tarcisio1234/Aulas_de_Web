@@ -1,9 +1,24 @@
 <?php
  include 'conexaoBanco.php';
- $sql = "SELECT* FROM aula";
- $results = '';
 
- if(isset($_POST['instrutor'])||isset($_POS['nome_aluno'])){
+ if(isset($_POST['delete_id'])){
+   $id = $_POST['delete_id'];
+   $declaracao = "DELETE FROM `aula` WHERE idaula = ?";
+   $declaracao = $conexao->prepare($declaracao);
+   $declaracao->bind_param("i",$id);
+   if($declaracao->execute()){
+      header("Location:../tabelaAula.php?message=Deletado com sucesso");
+   }else{
+      header("Location:../tabelaAula.php?message=Erro deletar");
+   }
+   $declaracao->close();
+   $conexao->close();
+   exit();
+ }
+  $sql = "SELECT* FROM aula";
+  $results = '';
+
+ if(isset($_POST['instrutor'])||isset($_POST['nome_aluno'])){
     $instrutor = $_POST['instrutor'];
     $aluno = $_POST['nome_aluno'];
 
@@ -26,18 +41,24 @@
                <td>{$linha['instrutor']} </td>
                <td>{$linha['aluno']} </td>
                <td>{$linha['veiculo']} </td>
-            <tr/>
+               <td>
+                  <form action='php/buscarAula.php' method='post' style ='display:inline'>
+                     <input type ='text' name ='delete_id' value='{$linha['idaula']}' >
+                     <button type = 'submit' name ='delete'>Deletar</button>
+                  </form>
+                  </td>
+            </tr>
             ";
          }
       }
       else{
          $results ="
          <tr>
-            <td coluspan ='5'.Nenhuma aula encontrada</td>
+            <td colspan ='6'>Nenhuma aula encontrada</td>
          </tr>";
       }
       $conexao->close();
-      header("Location:../tabelaAula.php?results=".urlencode($results)); //garante o envio de infoemações para a url
+      header("Location:../tabelaAula.php?results=".urlencode($results)); //garante o envio de informações para a url
       exit();
     
 ?>

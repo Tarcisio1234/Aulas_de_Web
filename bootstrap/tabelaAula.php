@@ -74,6 +74,7 @@
                     <th>Instrutor</th>
                     <th>Aluno</th>
                     <th>Veículo</th>
+                    <th>Opção</th>
                 </tr>
             </thead>
             <tbody>
@@ -86,7 +87,7 @@
             </tbody>
         </table>
         <div class="all-classes-button">
-            <form method="POST" action="php/buscaAula.php">
+            <form method="POST" action="php/buscarAula.php">
                 <button type="submit" name="all_classes">Todas as Aulas</button>
             </form>
         </div>
