@@ -15,6 +15,18 @@
    $conexao->close();
    exit();
  }
+
+ if(isset($_POST['editar_id'])){
+   $idEditar = $_POST['editar_id'];
+   echo"<script> 
+   if(confirm('Você deseja editar essa aula?')){
+      window.location.href =''
+   }else{
+      window.location.href ='../tabelaAula.php'
+   }
+   </script>";
+ }
+ 
   $sql = "SELECT* FROM aula";
   $results = '';
 
@@ -43,10 +55,14 @@
                <td>{$linha['veiculo']} </td>
                <td>
                   <form action='php/buscarAula.php' method='post' style ='display:inline'>
-                     <input type ='text' name ='delete_id' value='{$linha['idaula']}' >
+                     <input type ='hidden' name ='delete_id' value='{$linha['idaula']}' >
                      <button type = 'submit' name ='delete'>Deletar</button>
                   </form>
-                  </td>
+                  <form action='php/buscarAula.php' method='post' style ='display:inline'>
+                     <input type='hidden' name='editar_id' value='{$linha['idaula']}' >
+                     <button type='submit' name='editar' onclick='return confirmarEdicao(this.form)'>Editar</button>
+                  </form>
+               </td>
             </tr>
             ";
          }
