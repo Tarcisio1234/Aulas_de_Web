@@ -92,15 +92,5 @@
             </form>
         </div>
     </div>
-    <script>
-   function confirmarEdicao(form) {
-      if(confirm('Você deseja editar essa aula?')){
-      form.submit();
-   }
-   else{
-      return false;
-   }
-   }
-</script>
 </body>
 </html>

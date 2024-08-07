@@ -20,13 +20,25 @@
    $idEditar = $_POST['editar_id'];
    echo"<script> 
    if(confirm('Você deseja editar essa aula?')){
-      window.location.href =''
+      window.location.href ='../cadastrarAula.php?id=$idEditar'
    }else{
       window.location.href ='../tabelaAula.php'
    }
    </script>";
  }
  
+if(isset($_POST['editar_id'])){
+   $id=$_POST['editar_id'];
+   echo"
+   if(confirm('Deseja editar essa aula){
+      window.location.href= '../cadastrarAula.php';
+   }
+   else{
+      window.location.href = '../tabelaAula.php'
+   ";
+   exit();
+}
+
   $sql = "SELECT* FROM aula";
   $results = '';
 
@@ -56,11 +68,11 @@
                <td>
                   <form action='php/buscarAula.php' method='post' style ='display:inline'>
                      <input type ='hidden' name ='delete_id' value='{$linha['idaula']}' >
-                     <button type = 'submit' name ='delete'>Deletar</button>
+                     <button type ='submit' name ='delete'>Deletar</button>
                   </form>
                   <form action='php/buscarAula.php' method='post' style ='display:inline'>
                      <input type='hidden' name='editar_id' value='{$linha['idaula']}' >
-                     <button type='submit' name='editar' onclick='return confirmarEdicao(this.form)'>Editar</button>
+                     <button type ='submit' name ='editar'>Editar</button>
                   </form>
                </td>
             </tr>

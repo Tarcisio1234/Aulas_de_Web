@@ -9,34 +9,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>Agendar Aula</h1>
         <?php
         // Conexão com o banco
         include 'php/conexaoBanco.php';
         
         // Inicializa as variáveis
-        /*
-        if(isset($_POST['Agendar'])){
-        $instrutor = filter_input(INPUT_POST, 'instrutor', FILTER_SANITIZE_STRING);
-        $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
-        $aluno = filter_input(INPUT_POST, 'aluno', FILTER_SANITIZE_STRING);
-        $data = filter_input(INPUT_POST, 'data', FILTER_SANITIZE_STRING);
-        $hora = filter_input(INPUT_POST, 'hora', FILTER_SANITIZE_STRING);
-        $paga = filter_input(INPUT_POST, 'paga', FILTER_SANITIZE_STRING);
-        $carro = filter_input(INPUT_POST, 'carro', FILTER_SANITIZE_STRING);
-        
-        }*/
+        $instrutor = '';
+        $cpf = '';
+        $aluno = '';
+        $data = '';
+        $hora = '';
+        $pago = '';
+        $carro = '';
         
         // Verifica se um ID foi passado na URL
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            
+            ?>
+            <h1>Editar Aula</h1>
+            <?php 
             // Busca os dados da aula pelo ID
             $sql = "SELECT * FROM aula WHERE idaula = ?";
             $stmt = $conexao->prepare($sql);
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $resultado = $stmt->get_result();
+
             
             // Preenche os campos do formulário com os dados da aula
             if ($resultado->num_rows > 0) {
@@ -46,45 +44,58 @@
                 $aluno = $linha['aluno'];
                 $data = date('Y-m-d', strtotime($linha['data']));
                 $hora = $linha['hora'];
-                $paga = $linha['paga'];
+                $pago = $linha['pago'];
                 $carro = $linha['veiculo'];
             }
             
             $stmt->close();
+            $conexao->close();
         }
         
-        $conexao->close();
+
+        else{
+            ?>
+            <h1>Agendar Aula</h1>
+            <?php
+        }
         ?>
         <form action="php/editarSalvarAulas.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="id" value="<?php echo $id?>">
+
             <label for="instrutor">Nome do Instrutor:</label>
-            <input type="text" id="instrutor" name="instrutor" require>
+            <input type="text" id="instrutorID" name="instrutor" value="<?php echo $instrutor;?>" require>
 
             <label for="aluno">CPF do Aluno:</label>
-            <input type="text" id="cpf" name="cpf" require>
+            <input type="text" id="cpfID" name="cpf" value="<?php echo $cpf;?>" require>
 
             <button type="submit" class="button">Buscar</button>
 
             <label for="aluno">Nome do Aluno:</label>
-            <input type="text" id="aluno" name="aluno" required>
+            <input type="text" id="alunoID" name="aluno" value="<?php echo $aluno;?>" required>
             
             <label for="data">Data:</label>
-            <input type="date" id="data" name="data" required>
+            <input type="date" id="dataID" name="data" value="<?php echo $data;?>" required>
             
             <label for="hora">Hora:</label>
-            <input type="time" id="hora" name="hora" required>
+            <input type="time" id="horaID" name="hora" value="<?php echo $hora;?>" required>
             
-            <label for="paga">Aula Paga?</label>
-            <select id="paga" name="paga">
-                <option value="sim" >Sim</option>
-                <option value="nao">Não</option>
+            <label for="pago">Aula Paga?</label>
+            <select id="pago" name="pago">
+                <option value="sim" <?php if($pago == 'sim') echo 'selected'; ?>>Sim</option>
+                <option value="não" <?php if($pago == 'não') echo 'selected'; ?>>Não</option>
             </select>
             
             <label for="carro">Marca do Carro:</label>
-            <input type="text" id="carro" name="carro" required>
+            <input type="text" id="veiculoID" name="veiculo" value=" <?php echo $carro; ?>" required>
             
-            <button type="submit" name="Agendar" class="button">Agendar</button>
+            <button type="submitID" name="Agendar" class="button">Agendar</button>
         </form>
     </div>
+    <script>
+        function alterarTexto(){
+            var texto = document.getElementById('titulo');
+            texto.innerHTML = 'Editar aula';
+        }
+    </script>
 </body>
 </html>
