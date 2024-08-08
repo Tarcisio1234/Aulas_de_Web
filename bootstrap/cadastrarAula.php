@@ -52,7 +52,6 @@
             $conexao->close();
         }
         
-
         else{
             ?>
             <h1>Agendar Aula</h1>
@@ -60,7 +59,7 @@
         }
         ?>
         <form action="php/editarSalvarAulas.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $id?>">
+            <input type="hidden" name="idEditar" value="<?php echo $id?>">
 
             <label for="instrutor">Nome do Instrutor:</label>
             <input type="text" id="instrutorID" name="instrutor" value="<?php echo $instrutor;?>" require>
@@ -88,7 +87,18 @@
             <label for="carro">Marca do Carro:</label>
             <input type="text" id="veiculoID" name="veiculo" value=" <?php echo $carro; ?>" required>
             
-            <button type="submitID" name="Agendar" class="button">Agendar</button>
+            <?php
+            if(isset($_GET['id'])){
+                ?>
+                <button type="submit" name="Editar" class="button">Editar</button>
+                <?php
+            }
+            else{
+                ?>
+            <button type="submit" name="Agendar" class="button">Agendar</button>
+            <?php
+            }
+            ?>
         </form>
     </div>
     <script>
