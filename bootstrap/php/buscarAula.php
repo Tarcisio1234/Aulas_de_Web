@@ -1,41 +1,36 @@
 <?php
+ session_start();
  include 'conexaoBanco.php';
 
+ // deletando as aulas do banco
  if(isset($_POST['delete_id'])){
    $id = $_POST['delete_id'];
    $declaracao = "DELETE FROM `aula` WHERE idaula = ?";
    $declaracao = $conexao->prepare($declaracao);
    $declaracao->bind_param("i",$id);
    if($declaracao->execute()){
-      header("Location:../tabelaAula.php?message=Deletado com sucesso");
+      $_SESSION['msg'] = "Aula deletada com sucesso";
    }else{
-      header("Location:../tabelaAula.php?message=Erro deletar");
+      $_SESSION['msg'] = "Aula não deletada";
    }
    $declaracao->close();
    $conexao->close();
+   header("Location:../tabelaAula.php");
    exit();
  }
 
- if(isset($_POST['editar_id'])){
-   $idEditar = $_POST['editar_id'];
-   echo"<script> 
-   if(confirm('Você deseja editar essa aula?')){
-      window.location.href ='../cadastrarAula.php?id=$idEditar'
-   }else{
-      window.location.href ='../tabelaAula.php'
-   }
-   </script>";
- }
+ //Editando as aulas do banco
  
 if(isset($_POST['editar_id'])){
    $id=$_POST['editar_id'];
    echo"
-   if(confirm('Deseja editar essa aula){
-      window.location.href= '../cadastrarAula.php';
+   <script>
+   if(confirm('Você deseja editar essa aula?')){
+      window.location.href ='../cadastrarAula.php?id=$id'
+   }else{
+      window.location.href ='../tabelaAula.php'
    }
-   else{
-      window.location.href = '../tabelaAula.php'
-   ";
+   </script>";
    exit();
 }
 
@@ -85,8 +80,9 @@ if(isset($_POST['editar_id'])){
             <td colspan ='6'>Nenhuma aula encontrada</td>
          </tr>";
       }
+      $_SESSION['results'] = $results;
       $conexao->close();
-      header("Location:../tabelaAula.php?results=".urlencode($results)); //garante o envio de informações para a url
+      header("Location:../tabelaAula.php") ;//garante o envio de informações para a url
       exit();
     
 ?>

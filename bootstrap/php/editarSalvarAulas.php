@@ -13,8 +13,7 @@ include 'conexaoBanco.php';
 if(isset($_POST['Agendar'])){
 // caso não possua ID na url ira agendar uma nova aula
         $salvar = $conexao->prepare("INSERT INTO `aula`(`data`,`hora`,`instrutor`,`aluno`,`veiculo`,`pago`,`cpf`)VALUES(?,?,?,?,?,?,?)");
-        $salvar->bind_param("ssssssi", $data, $hora, $instrutor, $aluno, $veiculo, $pago, $cpf);
-        $salvar->execute();
+        $salvar->bind_param("sssssss", $data, $hora, $instrutor, $aluno, $veiculo, $pago, $cpf);
         
         if ($salvar->execute()){
             echo"<script>

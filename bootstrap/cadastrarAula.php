@@ -101,11 +101,5 @@
             ?>
         </form>
     </div>
-    <script>
-        function alterarTexto(){
-            var texto = document.getElementById('titulo');
-            texto.innerHTML = 'Editar aula';
-        }
-    </script>
 </body>
 </html>
