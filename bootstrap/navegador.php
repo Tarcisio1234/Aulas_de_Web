@@ -15,8 +15,18 @@
         <a href="#">Cadastrar Carro</a>
         <a href="tabelaAula.php">Buscar Aula</a>
         <a href="#">Contas</a>
-        <a href="#">Sair</a>
+        <a href="bemVindo.php">Sair</a>
     </div>
     </nav>
+    <footer>
+        <p>&copy; 2024 Auto Escola Lógica.</p>
+        <p>Suporte Técnico</p>
+        <a href="mailto:suporte@email.com">
+        <img src="IMG/o-email.png" width="2%" alt="">
+        </a>
+        <a href="https://wa.me/5532984867787" target="_blank">
+        <img src="IMG/Whatsapp.png" alt="" width="2%">
+        </a>
+    </footer>
 </body>
 </html>

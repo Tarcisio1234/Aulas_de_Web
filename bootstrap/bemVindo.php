@@ -1,11 +1,11 @@
 <?php
-session_start();
+/*session_start();
 if(isset($_SESSION['nome'])){
     $nomeUsuario = $_SESSION['nome'];
 }
 else{
     header("location: login.html");
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +18,18 @@ else{
    
 </head>
 <body>
+    <?php
+    include_once"navegador.php";
+    ?>
+
     <div class="container">
         <h1>Olá, <?php echo htmlspecialchars($nomeUsuario) ?></h1>
         <p>Hoje é dia <span id="dataAtual"></span>.</p>
         <p>Clique no menu e escolha o que deseja fazer:</p>
         <div class="menu">
-            <a href="#cadastrarAluno">Cadastrar Aluno</a>
-            <a href="#cadastrarCarro">Cadastrar Carro</a>
-            <a href="#agendarAula">Agendar Aula</a>
+            <a href="cadAluno.php">Cadastrar Aluno</a>
+            <a href="#">Cadastrar Carro</a>
+            <a href="cadastrarAula.php">Agendar Aula</a>
         </div>
     </div>
     <script>
