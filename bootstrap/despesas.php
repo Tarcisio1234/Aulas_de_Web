@@ -47,8 +47,14 @@
         <label for="valor">Valor:</label>
         <input type="number" id="valor" name="valor" step="0.01" required>
 
+        <?php
+        $min = new DateTime();
+        $min->modify("-30 days");
+        $max = new DateTime();
+        ?>
+
         <label for="data">Data:</label>
-        <input type="date" id="data" name="data" required>
+        <input type="date" id="data" name="data" <?php date('Y-m-d');?> min=<?=$min->format("Y-m-d")?> max=<?=$max->format("Y-m-d")?>  required>
 
         <button class="button" type="submit">Cadastrar</button>
     </form>
