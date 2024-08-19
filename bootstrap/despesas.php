@@ -1,4 +1,9 @@
 <?php
+
+include 'php/conexaoBanco.php';
+session_start();
+    $contas = $_SESSION['contas']??'';
+    $totalFormatado = $_SESSION['totalFormatado']??'0,00';
     $despesas = ["Despesa com Funcionário" =>["Salario","Vale Transporte","Vale Alimentação"],
     "Dispesas com carros"=> ["Oficina","Gasolina","Lavagem", "Seguro"],
     "Dispesas Fixas"=>["Luz","Agua","Aluguel"],"Dispesas Eventuais"=> ["Alguem pegou fogo no carro"]];
@@ -20,7 +25,7 @@
 <body>
 <div class="container">
     <h1>Controle de Despesas</h1>
-    <form action="" method="post">
+    <form action="#" method="post">
         <label for="tipo">Tipo de Despesa:</label>
         
         <select id="tipo" name="tipo" required onchange="this.form.submit()">
@@ -31,7 +36,11 @@
             <option value="<?php echo $tipo;?>"<?php echo $tipo === $tipoSelecionado?'selected':'';?>><?php echo $tipo; ?></option>
             <?php endforeach ?>
             </select>
+            </form>
 
+
+        <form action="php/contas.php" method='post'>
+        <input type='hidden' name='tipo' value="<?php echo $tipoSelecionado;?>">
         <label for="descricao">Descrição:</label>
         <select name="descricao" id="descricao" required>
             <?php 
@@ -70,11 +79,11 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Adicione as linhas de despesas aqui -->
+            <?php echo $contas ?>
         </tbody>
     </table>
 
-    <h3>Total:<!-- <?php echo number_format($total, 2, ',', '.'); ?>--></h3>
+    <h3>Total: R$:<?php echo $totalFormatado;?></h3>
 </div>
 </body>
 </html>
