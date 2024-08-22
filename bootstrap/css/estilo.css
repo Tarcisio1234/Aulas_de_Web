@@ -4,7 +4,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-
+    padding-bottom: 10%;
 }
 
 .container {
@@ -15,7 +15,6 @@ body {
     border-radius: 8px;
     text-align: center;
     max-width: 800px;
-    
     margin: 20px auto;
     margin-top: 250px;
 }
@@ -28,8 +27,8 @@ footer {
     padding: 10px 0;
     bottom: 0;
     left: 0;
-    position: fixed;
     width: 100%;
+    position: fixed;
 }
 
 footer p {

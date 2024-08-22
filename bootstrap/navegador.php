@@ -15,7 +15,7 @@
         <a href="#">Cadastrar Carro</a>
         <a href="tabelaAula.php">Buscar Aula</a>
         <a href="#">Contas</a>
-        <a href="bemVindo.php">Sair</a>
+        <a href="php/sair.php">Sair</a>
     </div>
     </nav>
     <footer>

@@ -46,12 +46,12 @@
             </form>
         </div>
         <?php
-            unset($_SESSION['nome']);
+            /*unset($_SESSION['nome']);
             unset($_SESSION['celular']);
             unset($_SESSION['cpf']);
             unset($_SESSION['whatsapp']);
             unset($_SESSION['email']);
-            unset($_SESSION['categoria']);
+            unset($_SESSION['categoria']);*/
         ?>
         <script>
         function mascaracpf(cpf) {
